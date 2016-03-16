@@ -1,6 +1,6 @@
 // MAIN CONTROLLER DISH
-function mainController($scope, $http, dishService) {
-	$scope.title = "Liste des invitations";
+function dishController($scope, $http, dishService) {
+	$scope.title = "Liste de plats";
 	
 	function load(){
 		dishService.get().then(function(res){

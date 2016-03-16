@@ -8,15 +8,15 @@
 </form>
 <hr>
 <ul class="list-group">
-	<li class="list-group-item" ng-repeat="dish in dishs">
+	<li class="list-group-item" ng-repeat="guest in guests">
 		<form class="form-inline">
 			<div class="form-group">
 				<input type="text" class="form-control" id="inputMessage" 
-					   ng-model="dish.description">
+					   ng-model="guest.description">
 			</div>
 			<div class="pull-right">
-				<button type="submit" class="btn btn-default" ng-click="update(dish)">Update</button>
-				<button type="submit" class="btn btn-danger" ng-click="delete(dish)">Delete</button>
+				<button type="submit" class="btn btn-default" ng-click="update(guest)">Update</button>
+				<button type="submit" class="btn btn-danger" ng-click="delete(guest)">Delete</button>
 			</div>
 		</form>
 	</li>
