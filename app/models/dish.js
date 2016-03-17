@@ -3,7 +3,8 @@ var mongoose = require('mongoose');
 
 
 var dishSchema = new mongoose.Schema({
-  description: String
+  meal: String,
+  ingredients: String
 });
 
 var Dish = {
@@ -12,7 +13,8 @@ var Dish = {
     
     create: function(req, res) {
 		Dish.model.create({
-			description: req.body.description
+			meal: req.body.meal,
+			ingredients: req.body.ingredients
 		}, function(){
 			res.sendStatus(200);
 		})
@@ -26,7 +28,8 @@ var Dish = {
 
 	update: function(req, res){
 		Dish.model.findByIdAndUpdate(req.params.id, {
-			description: req.body.description
+			meal: req.body.meal,
+			ingredients: req.body.ingredients
 		}, function(){
 			res.sendStatus(200);
 		})

@@ -9,11 +9,13 @@ function dishController($scope, $http, dishService) {
 	}
 	$scope.add = function(){
 		var data = {};
-		data.description = $scope.description;
+		data.meal = $scope.meal;
+		data.ingredients = $scope.ingredients;
 		dishService.create(data).then(function(res){
 			load();
 		});
-		$scope.description = "";
+		$scope.meal = "";
+		$scope.ingredients = "";
 	}
 	$scope.update = function(dish){
 		dishService.update(dish._id, dish).then(function(res){/////////////
