@@ -1,4 +1,4 @@
-// MAIN CONTROLLER
+// MAIN CONTROLLER TODO
 function mainController($scope, $http, todoService) {
 	$scope.title = "Todo List";
 	

@@ -2,10 +2,19 @@ function config($routeProvider) {
 	$routeProvider
 		.when('/', {
 			templateUrl: 'views/main.html',
-			controller: 'mainController'
+			controller: 'invitController'
 		})
-		.when('/about', {
-			templateUrl: 'views/about.html'
+		.when('/guest', {
+			templateUrl: 'views/guest.html',
+			controller: 'guestController'
+		})
+		.when('/dish', {
+			templateUrl: 'views/dish.html',
+			controller: 'dishController'
+		})
+	.when('/guest', {
+			templateUrl: 'views/guest.html',
+			controller: 'guestController'
 		})
 		.otherwise({
 			redirectTo: '/'
@@ -19,8 +28,14 @@ function run($rootScope, $location){
 }
 angular.module('app', ['ngRoute'])
     .config(config)
-    .controller('mainController', mainController)
-    .service('todoService', todoService)
+
+    .controller('dishController', dishController)
+    .controller('guestController', guestController)
+    .controller('invitController', invitController)
+    .service('dishService', dishService)
+    .service('guestService', guestService)
+    .service('invitService', invitService)
+
     /*.factory('', )*/
     .run(run);
 
