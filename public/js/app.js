@@ -7,6 +7,10 @@ function config($routeProvider) {
 		.when('/about', {
 			templateUrl: 'views/about.html'
 		})
+	.when('/guest', {
+			templateUrl: 'views/guest.html',
+			controller: 'guestController'
+		})
 		.otherwise({
 			redirectTo: '/'
 		});
@@ -20,7 +24,9 @@ function run($rootScope, $location){
 angular.module('app', ['ngRoute'])
     .config(config)
     .controller('mainController', mainController)
+		.controller('guestController', guestController)
     .service('todoService', todoService)
+		.service('guestService', guestService)
     /*.factory('', )*/
     .run(run);
 
