@@ -2,7 +2,7 @@ function config($routeProvider) {
 	$routeProvider
 		.when('/', {
 			templateUrl: 'views/main.html',
-			controller: 'mainController'
+			controller: 'invitController'
 		})
 		.when('/guest', {
 			templateUrl: 'views/guest.html',
@@ -26,7 +26,7 @@ angular.module('app', ['ngRoute'])
     .config(config)
     .controller('dishController', dishController)
     .controller('guestController', guestController)
-    .controller('mainController', mainController)
+    .controller('invitController', invitController)
     .service('dishService', dishService)
     .service('guestService', guestService)
     .service('invitService', invitService)

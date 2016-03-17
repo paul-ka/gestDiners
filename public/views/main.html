@@ -1,22 +1,45 @@
 <h1>{{title}}</h1>
 <form class="form-inline">
 	<div class="form-group">
-		<input type="text" class="form-control" id="inputMessage" 
-			   placeholder="Your task" ng-model="description">
+		<select ng-model="filterCondition.guest">
+		    <option ng-selected="{{guest.value == filterCondition.guest}}"
+		            ng-repeat="guest in guests"
+		            value="{{guest.value}}">
+		      {{guest.displayName}}
+		    </option>
+		</select>
+		<input type="text" class="form-control" id="inputInvite" 
+			   placeholder="invité" ng-model="inputInvite">
+		<input type="texte" class="form-control" id="inputDate" 
+			   placeholder="date" ng-model="inputDate">
+		<input type="text" class="form-control" id="inputEntree" 
+			   placeholder="entrée" ng-model="inputEntree">
+		<input type="text" class="form-control" id="inputPlat" 
+			   placeholder="plat" ng-model="inputPlat">
+		<input type="text" class="form-control" id="inputDessert" 
+			   placeholder="dessert" ng-model="inputDessert">
 	</div>
 	<button type="submit" class="btn btn-default" ng-click="add()">Add</button>
 </form>
 <hr>
 <ul class="list-group">
-	<li class="list-group-item" ng-repeat="dish in dishs">
+	<li class="list-group-item" ng-repeat="invit in invits">
 		<form class="form-inline">
 			<div class="form-group">
-				<input type="text" class="form-control" id="inputMessage" 
-					   ng-model="dish.description">
+				<input type="text" class="form-control" id="inputInvite" 
+					   ng-model="invit.inputInvite">
+				<input type="text" class="form-control" id="inputDate" 
+					   ng-model="invit.inputDate">
+				<input type="text" class="form-control" id="inputEntree" 
+					   ng-model="invit.inputEntree">
+				<input type="text" class="form-control" id="inputPlat" 
+					   ng-model="invit.inputPlat">
+				<input type="text" class="form-control" id="inputDessert" 
+					   ng-model="invit.inputDessert">
 			</div>
 			<div class="pull-right">
-				<button type="submit" class="btn btn-default" ng-click="update(dish)">Update</button>
-				<button type="submit" class="btn btn-danger" ng-click="delete(dish)">Delete</button>
+				<button type="submit" class="btn btn-default" ng-click="update(invit)">Update</button>
+				<button type="submit" class="btn btn-danger" ng-click="delete(invit)">Delete</button>
 			</div>
 		</form>
 	</li>
