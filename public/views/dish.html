@@ -1,22 +1,27 @@
 <h1>{{title}}</h1>
 <form class="form-inline">
 	<div class="form-group">
-		<input type="text" class="form-control" id="inputMessage" 
-			   placeholder="Your task" ng-model="description">
+
+		<input type="text" class="form-control" id="inputMessage" placeholder="Plat" ng-model="meal">
+		<input type="text" class="form-control" id="inputMessage" placeholder="Ingrédients" ng-model="ingredients">
 	</div>
-	<button type="submit" class="btn btn-default" ng-click="add()">Add</button>
+	<button type="submit" class="btn btn-default" ng-click="add()">Ajouter</button>
+
 </form>
 <hr>
 <ul class="list-group">
 	<li class="list-group-item" ng-repeat="dish in dishs">
 		<form class="form-inline">
 			<div class="form-group">
-				<input type="text" class="form-control" id="inputMessage" 
-					   ng-model="dish.description">
+
+				<input type="text" class="form-control" id="inputMessage" ng-model="dish.meal">
+			</div>
+			<div class="form-group">
+				<input type="text" class="form-control" id="inputMessage" ng-model="dish.ingredients">
 			</div>
 			<div class="pull-right">
-				<button type="submit" class="btn btn-default" ng-click="update(dish)">Update</button>
-				<button type="submit" class="btn btn-danger" ng-click="delete(dish)">Delete</button>
+				<button type="submit" class="btn btn-default" ng-click="update(dish)">Maj</button>
+				<button type="submit" class="btn btn-danger" ng-click="delete(dish)">Effacer</button>
 			</div>
 		</form>
 	</li>
