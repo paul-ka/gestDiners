@@ -2,6 +2,14 @@
 // GEST CONTROLLER
 function guestController($scope, $http, guestService) {
 	$scope.title = "Mes Amis";
+	$scope.i = 0; 
+	$scope.suivant = function(i){		
+		$scope.i++;
+	}
+	
+	$scope.precedent = function(i) {
+		$scope.i--
+	}
 	
 	function load(){
 		guestService.get().then(function(res){
@@ -20,6 +28,7 @@ function guestController($scope, $http, guestService) {
 		$scope.name = "";
 		$scope.allergy = "";
 		$scope.hated = "";
+		$scope.i = 0
 	}
 	$scope.update = function(guest){
 		guestService.update(guest._id, guest).then(function(res){
