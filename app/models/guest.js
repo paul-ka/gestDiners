@@ -3,7 +3,7 @@ var mongoose = require('mongoose');
 
 
 var guestSchema = new mongoose.Schema({
-  name: String,
+ 	name: String,
 	allergy: String,
 	hated: String
 });

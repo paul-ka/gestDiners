@@ -1,17 +1,14 @@
 <h1>{{title}}</h1>
 <form class="form-inline">
 	<div class="form-group">
-		<select ng-model="filterCondition.guest">
-		    <option ng-selected="{{guest.value == filterCondition.guest}}"
-		            ng-repeat="guest in guests"
-		            value="{{guest.value}}">
-		      {{guest.displayName}}
+		<select ng-model="inputInvite" class="form-control">
+		    <option ng-repeat="guest in guests"
+		            value="{{guest.name}}">
+		      {{guest.name}}
 		    </option>
 		</select>
-		<input type="text" class="form-control" id="inputInvite" 
-			   placeholder="invité" ng-model="inputInvite">
 		<input type="texte" class="form-control" id="inputDate" 
-			   placeholder="date" ng-model="inputDate">
+			   placeholder="jj/mm/aaaaa" ng-model="inputDate">
 		<input type="text" class="form-control" id="inputEntree" 
 			   placeholder="entrée" ng-model="inputEntree">
 		<input type="text" class="form-control" id="inputPlat" 
