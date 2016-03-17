@@ -12,10 +12,6 @@ function config($routeProvider) {
 			templateUrl: 'views/dish.html',
 			controller: 'dishController'
 		})
-	.when('/guest', {
-			templateUrl: 'views/guest.html',
-			controller: 'guestController'
-		})
 		.otherwise({
 			redirectTo: '/'
 		});
