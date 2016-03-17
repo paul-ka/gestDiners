@@ -1,8 +1,9 @@
 body{
     padding-top: 70px;
+	background-color: #009DE3
 }
 .navbar-border{
-	border-bottom: 3px solid #009DE3;
+	border-bottom: 3px solid #E5007A;
 }
 .navbar-header img{
 	transition: 0.4s;
@@ -10,3 +11,10 @@ body{
 .navbar-header img:hover{
 	transform: rotate(360deg);
 }  
+h1 {
+	color:white;
+}
+
+.grey li {
+	background-color: rgba(88, 88, 88, 0.9);
+}

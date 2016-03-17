@@ -21,7 +21,7 @@ function invitController($scope, $http, invitService) {
 		$scope.description = "";
 	}
 	$scope.update = function(invit){
-		invitService.update(invit._id, invit).then(function(res){/////////////
+		invitService.update(invit._id, invit).then(function(res){
 			load();
 		});
 	}

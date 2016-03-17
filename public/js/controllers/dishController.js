@@ -18,7 +18,7 @@ function dishController($scope, $http, dishService) {
 		$scope.ingredients = "";
 	}
 	$scope.update = function(dish){
-		dishService.update(dish._id, dish).then(function(res){/////////////
+		dishService.update(dish._id, dish).then(function(res){
 			load();
 		});
 	}
