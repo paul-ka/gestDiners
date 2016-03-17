@@ -12,6 +12,10 @@ function config($routeProvider) {
 			templateUrl: 'views/dish.html',
 			controller: 'dishController'
 		})
+	.when('/guest', {
+			templateUrl: 'views/guest.html',
+			controller: 'guestController'
+		})
 		.otherwise({
 			redirectTo: '/'
 		});
@@ -24,12 +28,14 @@ function run($rootScope, $location){
 }
 angular.module('app', ['ngRoute'])
     .config(config)
+
     .controller('dishController', dishController)
     .controller('guestController', guestController)
     .controller('invitController', invitController)
     .service('dishService', dishService)
     .service('guestService', guestService)
     .service('invitService', invitService)
+
     /*.factory('', )*/
     .run(run);
 

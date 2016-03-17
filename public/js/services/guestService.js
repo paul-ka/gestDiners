@@ -1,4 +1,5 @@
-// DISH SERVICE
+
+// GEST SERVICE
 function guestService($http) {
     return {
         get : function() {

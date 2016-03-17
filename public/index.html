@@ -6,19 +6,21 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" type="image/png" href="" />
-    <title>Sample</title>
+    <title>Un Diner Plus Que Parfait</title>
     <!-- CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
     <!-- AngularJS -->
     <script src="js/libs/angular.min.js"></script>
     <script src="js/libs/angular-route.min.js"></script>
+
     <script src="js/controllers/invitController.js"></script>
     <script src="js/controllers/dishController.js"></script>
     <script src="js/controllers/guestController.js"></script>
     <script src="js/services/dishService.js"></script>
     <script src="js/services/guestService.js"></script>
     <script src="js/services/invitService.js"></script>
+
     
     <script src="js/app.js"></script>
     </head>
@@ -26,12 +28,14 @@
     <nav class="navbar navbar-inverse navbar-fixed-top navbar-border" role="navigation">
         <div class="container">
             <div class="navbar-header">
-                <a href="#/"><img src="https://unhosted.org/slides/img/js.png" width="50px"></a>
+                <a href="#/"><img src="../img/diner.png" width="50px"></a>
             </div>
             <ul class="nav navbar-nav">
+
                 <li ng-class="{active: activetab=='/'}"><a href="#/">Invitations</a></li>
-                <li ng-class="{active: activetab=='/guest'}"><a href="#/guest">Amis</a></li>
+                <li ng-class="{active: activetab=='/guest'}"><a href="#/guest">Mes Amis</a></li>
                 <li ng-class="{active: activetab=='/dish'}"><a href="#/dish">Plats</a></li>
+
             </ul>
         </div>
     </nav>
