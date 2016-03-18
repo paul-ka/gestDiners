@@ -12,9 +12,9 @@ function config($routeProvider) {
 			templateUrl: 'views/dish.html',
 			controller: 'dishController'
 		})
-	.when('/guest', {
-			templateUrl: 'views/guest.html',
-			controller: 'guestController'
+		.when('/party', {
+			templateUrl: 'views/party.html',
+			controller: 'partyController'
 		})
 		.otherwise({
 			redirectTo: '/'
@@ -32,9 +32,11 @@ angular.module('app', ['ngRoute'])
     .controller('dishController', dishController)
     .controller('guestController', guestController)
     .controller('invitController', invitController)
+    .controller('partyController', partyController)
     .service('dishService', dishService)
     .service('guestService', guestService)
     .service('invitService', invitService)
+    .service('partyService', partyService)
 
     /*.factory('', )*/
     .run(run);
