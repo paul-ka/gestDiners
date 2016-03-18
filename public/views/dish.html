@@ -7,13 +7,19 @@
 
 					<input type="text" class="form-control" id="inputPlat" placeholder="Plat" ng-model="meal">
 					<input type="text" class="form-control" id="inputIngredient" placeholder="Ingrédients (ex:tomate, sel, etc...)" ng-model="ingredients">
+					<select class="form-control" ng-model="category" id="inputCat">
+					    <option value="entrée">entrée</option>
+					    <option value="plat">plat</option>
+					    <option value="dessert">dessert</option>
+					</select>
+					<input type="text" class="form-control" id="inputRec" placeholder="La recette" ng-model="recipe">
 				</div>
 				<div class="form-group">
 
 					<input type='file' ng-model='imageFile' base-sixty-four-input onchange="angular.element(this).scope().previewFile(this)">
+					<img id="preview">
 
 				</div>
-				<img id="preview">
 
 				<button type="submit" class="btn btn-default" ng-click="add()">Ajouter</button>
 
@@ -33,10 +39,18 @@
 						<div class="form-group">
 							<input type="text" class="form-control" id="inputMessage" ng-model="dish.ingredients">
 						</div>
+						<select ng-model="dish.category" class="form-control" id="inputCat">
+						    <option value="entrée">entrée</option>
+						    <option value="plat">plat</option>
+						    <option value="dessert">dessert</option>
+						</select>
+
+						<div class="form-group">
+							<input type="text" class="form-control" id="inputMessage" ng-model="dish.recipe">
+						</div>
 						<div class="form-group">
 							<img class="imgAdd" src="{{dish.image}}">
 						</div>
-
 						<div class="pull-right form-inline">
 							<button type="submit" class="btn btn-default" ng-click="update(dish)">Maj</button>
 							<button type="submit" class="btn btn-danger" ng-click="delete(dish)">X</button>

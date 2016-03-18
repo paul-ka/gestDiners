@@ -5,7 +5,9 @@ var mongoose = require('mongoose');
 var dishSchema = new mongoose.Schema({
 	meal: String,
 	ingredients: String,
-	image: String
+	image: String,
+	category: String,
+	recipe:String
 });
 
 var Dish = {
@@ -14,6 +16,8 @@ var Dish = {
 		Dish.model.create({
 			meal: req.body.meal,
 			ingredients: req.body.ingredients,
+			category: req.body.category,
+			recipe: req.body.recipe,
 			image: req.body.image
 		}, function () {
 
@@ -31,6 +35,8 @@ var Dish = {
 		Dish.model.findByIdAndUpdate(req.params.id, {
 			meal: req.body.meal,
 			ingredients: req.body.ingredients,
+			category: req.body.category,
+			recipe: req.body.recipe,
 			image: req.body.image
 		}, function () {
 

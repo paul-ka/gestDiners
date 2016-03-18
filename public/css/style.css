@@ -30,6 +30,6 @@ h1 {
 	max-width: 100px;
 	margin-left: 50px;
 }
-#inputPlat {
+#inputPlat, #inputCat {
 	margin: 20px 0;
 }
