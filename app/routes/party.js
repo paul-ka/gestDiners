@@ -1,0 +1,1 @@
+var Party = require('../models/party.js');

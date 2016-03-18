@@ -1,20 +1,35 @@
-body{
-    padding-top: 70px;
+
+body {
+	padding-top: 70px;
 	background-color: #009DE3
 }
-.navbar-border{
+
+.navbar-border {
 	border-bottom: 3px solid #E5007A;
 }
-.navbar-header img{
+
+.navbar-header img {
 	transition: 0.4s;
 }
-.navbar-header img:hover{
+
+.navbar-header img:hover {
 	transform: rotate(360deg);
-}  
-h1 {
-	color:white;
+
 }
 
-.grey li {
-	background-color: rgba(88, 88, 88, 0.9);
+h1 {
+	color: white;
+}
+
+.blue li {
+	background-color: #009DE3;
+	border: 1px solid rgba(255,255,255, 0.5);
+}
+
+.imgAdd {
+	max-width: 100px;
+	margin-left: 50px;
+}
+#inputPlat {
+	margin: 20px 0;
 }
