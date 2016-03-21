@@ -21,6 +21,11 @@ h1 {
 	color: white;
 }
 
+.blue td {
+	background-color: #009DE3;
+	border: 1px solid rgba(255,255,255, 0.5);
+}
+
 .blue li {
 	background-color: #009DE3;
 	border: 1px solid rgba(255,255,255, 0.5);
@@ -28,8 +33,14 @@ h1 {
 
 .imgAdd {
 	max-width: 100px;
-	margin-left: 50px;
+	margin-left: 20px;
 }
-#inputPlat, #inputCat {
+
+.champs {
 	margin: 20px 0;
+}
+
+th {
+	text-align: center;
+	color: white;
 }
