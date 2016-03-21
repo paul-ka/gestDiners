@@ -7,7 +7,8 @@ var dishSchema = new mongoose.Schema({
 	ingredients: String,
 	image: String,
 	category: String,
-	recipe:String
+	recipe:String,
+	stars:String
 });
 
 var Dish = {
@@ -37,6 +38,7 @@ var Dish = {
 			ingredients: req.body.ingredients,
 			category: req.body.category,
 			recipe: req.body.recipe,
+			stars: req.body.stars,
 			image: req.body.image
 		}, function () {
 
