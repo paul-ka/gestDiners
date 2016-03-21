@@ -19,6 +19,7 @@
 						<input type="text" class="form-control" id="inputMessage" placeholder="Aliment à proscrire" ng-model="hated">
 					</div>
 				</div>
+				<button type="submit" class="btn btn-default" disabled="disabled" ng-click="precedent(i)" ng-show="i==0">précédent</button>
 				<button type="submit" class="btn btn-default" ng-click="precedent(i)" ng-show="i>0 && i<=3">précédent</button>
 				<button type="submit" class="btn btn-default" ng-click="suivant(i)" ng-show="i<2">suivant</button>
 				<button type="submit" class="btn btn-default" ng-click="add()" ng-show="i==2">Terminer</button>

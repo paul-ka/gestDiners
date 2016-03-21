@@ -28,6 +28,17 @@ h1 {
 	max-width: 100px;
 	margin-left: 50px;
 }
-#inputPlat {
+.champs {
 	margin: 20px 0;
+}
+
+th {
+	text-align: center;
+	color: white;
+}
+
+ .table-striped > tbody > tr:nth-of-type(2n+1) {
+    background-color: #009DE3;
+	 margin: auto;
+	 text-align: center;
 }
