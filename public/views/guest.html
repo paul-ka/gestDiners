@@ -1,7 +1,7 @@
 <div class="container-fluid">
 	<div class="row">
-		<div class="col-md-8">
-			<h1>Ajouter un nouvel ami</h1>
+		<div class="col-md-offset-3 col-md-10">
+			<h1>Ajouter un nouvel ami</h1><br>
 			<form class="form-inline">
 				<div class="form-group">
 					<div class="nom" ng-show="i==0">
@@ -19,38 +19,40 @@
 						<input type="text" class="form-control" id="inputMessage" placeholder="Aliment à proscrire" ng-model="hated">
 					</div>
 				</div>
-				<button type="submit" class="btn btn-default" disabled="disabled" ng-click="precedent(i)" ng-show="i==0">précédent</button>
-				<button type="submit" class="btn btn-default" ng-click="precedent(i)" ng-show="i>0 && i<=3">précédent</button>
-				<button type="submit" class="btn btn-default" ng-click="suivant(i)" ng-show="i<2">suivant</button>
-				<button type="submit" class="btn btn-default" ng-click="add()" ng-show="i==2">Terminer</button>
+				<button type="submit" class="btn btn-default glyphicon glyphicon-arrow-left" disabled="disabled" ng-click="precedent(i)" ng-show="i==0"></button>
+				<button type="submit" class="btn btn-default glyphicon glyphicon-arrow-left" ng-click="precedent(i)" ng-show="i>0 && i<=3"></button>
+				<button type="submit" class="btn btn-default glyphicon glyphicon-arrow-right" ng-click="suivant(i)" ng-show="i<2"></button>
+				<button type="submit" class="btn btn-default glyphicon glyphicon-ok" ng-click="add()" ng-show="i==2"></button>
 			</form>
 		</div>
 	</div>
-
-	<hr>
+	<br>
+	<hr class="soften">
 	<div class="container-fluid">
 		<div class="row">
-			<h1>{{title}}</h1>
-			<ul class="list-group blue">
-				<li class="list-group-item" ng-repeat="guest in guests">
-					<form class="form-inline">
-						<div class="form-group">
+			<div class="col-md-offset-1 col-md-10 col-md-offset-1">
+				<h1>{{title}}</h1>
+				<ul class="list-group transparent">
+					<li class="list-group-item" ng-repeat="guest in guests">
+						<form class="form-inline">
+							<div class="form-group">
 
-							<input type="text" class="form-control" id="inputName" ng-model="guest.name">
-						</div>
-						<div class="form-group">
-							<input type="text" class="form-control" id="inputAllery" ng-model="guest.allergy">
-						</div>
-						<div class="form-group">
-							<input type="text" class="form-control" id="inputHated" ng-model="guest.hated">
-						</div>
-						<div class="pull-right">
-							<button type="submit" class="btn btn-success" ng-click="update(guest)">Mettre à jour</button>
-							<button type="submit" class="btn btn-danger" ng-click="delete(guest)">Supprimer</button>
-						</div>
-					</form>
-				</li>
-			</ul>
+								<input type="text" class="form-control" id="inputName" ng-model="guest.name">
+							</div>
+							<div class="form-group">
+								<input type="text" class="form-control" id="inputAllery" ng-model="guest.allergy">
+							</div>
+							<div class="form-group">
+								<input type="text" class="form-control" id="inputHated" ng-model="guest.hated">
+							</div>
+							<div class="pull-right">
+								<button type="submit" class="btn btn-info glyphicon glyphicon-ok" ng-click="update(guest)"></button>
+								<button type="submit" class="btn btn-danger glyphicon glyphicon-remove-sign" ng-click="delete(guest)"></button>
+							</div>
+						</form>
+					</li>
+				</ul>
+			</div>
 		</div>
 	</div>
 </div>

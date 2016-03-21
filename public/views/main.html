@@ -30,11 +30,11 @@
 		    </option>
 		</select>
 	</div>
-	<button type="submit" class="btn btn-default"  ng-click="add()">Ajoute</button>
+	<button type="submit" class="btn btn-default"  ng-click="add()">Ajouter</button>
 	<div ng-show="myForm.date.$invalid">Format de date incorrect</div>
 </form>
 <hr>
-<ul class="list-group">
+<ul class="list-group transparent"
 
 	<li class="list-group-item" ng-repeat="invit in invits">
 
@@ -52,8 +52,8 @@
 					   ng-model="invit.inputDessert">
 			</div>
 			<div class="pull-right">
-				<button type="submit" class="btn btn-default" ng-click="update(invit)">Maj</button>
-				<button type="submit" class="btn btn-danger" ng-click="delete(invit)">Suppr</button>
+				<button type="submit" class="btn btn-info glyphicon glyphicon-ok-sign" ng-click="update(invit)"></button>
+				<button type="submit" class="btn btn-danger glyphicon glyphicon-remove-sign" ng-click="delete(invit)"></button>
 			</div>
 		</form>
 	</li>
