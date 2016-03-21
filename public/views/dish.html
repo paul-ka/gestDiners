@@ -66,35 +66,35 @@
 									<button ng-show="dish.stars>=1" ng-click="dish.stars=1;update(dish)" type="button" class="btn btn-default">
 									<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
 									</button>
-									<button ng-show="dish.stars<1" ng-click="dish.stars=1;update(dish)" type="button" class="btn btn-default">
+									<button ng-hide="dish.stars>=1" ng-click="dish.stars=1;update(dish)" type="button" class="btn btn-default">
 									<span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
 									</button>
 									<!-- Etoile 2 -->
 									<button ng-show="dish.stars>=2" ng-click="dish.stars=2;update(dish)" type="button" class="btn btn-default">
 									<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
 									</button>
-									<button ng-show="dish.stars<2" ng-click="dish.stars=2;update(dish)" type="button" class="btn btn-default">
+									<button ng-hide="dish.stars>=2" ng-click="dish.stars=2;update(dish)" type="button" class="btn btn-default">
 									<span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
 									</button>
 									<!-- Etoile 3 -->
 									<button ng-show="dish.stars>=3" ng-click="dish.stars=3;update(dish)" type="button" class="btn btn-default">
 									<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
 									</button>
-									<button ng-show="dish.stars<3" ng-click="dish.stars=3;update(dish)" type="button" class="btn btn-default">
+									<button ng-hide="dish.stars>=3" ng-click="dish.stars=3;update(dish)" type="button" class="btn btn-default">
 									<span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
 									</button>
 									<!-- Etoile 4 -->
 									<button ng-show="dish.stars>=4" ng-click="dish.stars=4;update(dish)" type="button" class="btn btn-default">
 									<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
 									</button>
-									<button ng-show="dish.stars<4" ng-click="dish.stars=4;update(dish)" type="button" class="btn btn-default">
+									<button ng-hide="dish.stars>=4" ng-click="dish.stars=4;update(dish)" type="button" class="btn btn-default">
 									<span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
 									</button>
 									<!-- Etoile 5 -->
 									<button ng-show="dish.stars>=5" ng-click="dish.stars=5;update(dish)" type="button" class="btn btn-default">
 									<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
 									</button>
-									<button ng-show="dish.stars<5" ng-click="dish.stars=5;update(dish)" type="button" class="btn btn-default">
+									<button ng-hide="dish.stars>=5" ng-click="dish.stars=5;update(dish)" type="button" class="btn btn-default">
 									<span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
 									</button>
 								</div>

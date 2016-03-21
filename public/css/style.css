@@ -44,3 +44,7 @@ th {
 	text-align: center;
 	color: white;
 }
+#inputName, #inputAllery, #inputHated {
+	
+	width: 270px;
+}
