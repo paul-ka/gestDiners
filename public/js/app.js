@@ -12,6 +12,7 @@ function config($routeProvider) {
 			templateUrl: 'views/dish.html',
 			controller: 'dishController'
 		})
+
 		.when('/party', {
 			templateUrl: 'views/party.html',
 			controller: 'partyController'

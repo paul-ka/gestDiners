@@ -1,3 +1,4 @@
+
 body {
 	padding-top: 70px;
 	background-color: #009DE3
@@ -13,10 +14,16 @@ body {
 
 .navbar-header img:hover {
 	transform: rotate(360deg);
+
 }
 
 h1 {
 	color: white;
+}
+
+.blue td {
+	background-color: #009DE3;
+	border: 1px solid rgba(255,255,255, 0.5);
 }
 
 .blue li {
@@ -26,8 +33,9 @@ h1 {
 
 .imgAdd {
 	max-width: 100px;
-	margin-left: 50px;
+	margin-left: 20px;
 }
+
 .champs {
 	margin: 20px 0;
 }
@@ -35,10 +43,4 @@ h1 {
 th {
 	text-align: center;
 	color: white;
-}
-
- .table-striped > tbody > tr:nth-of-type(2n+1) {
-    background-color: #009DE3;
-	 margin: auto;
-	 text-align: center;
 }

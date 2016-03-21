@@ -1,0 +1,73 @@
+<div class="container-fluid">
+	<h1>Entrer un nouveau plat</h1>
+	<div class="row">
+		<div class="col-md-8">
+			<form class="plats">
+				<div class="form-group">
+
+					<select class="form-control" id="inputCat" ng-model="category">
+						<option value=""disabled selected hidden>Choix de la catégorie...</option>
+						<option value="entrée">entrée</option>
+						<option value="plat">plat</option>
+						<option value="dessert">dessert</option>
+					</select><br>
+					<input type="text" class="form-control" id="inputPlat" placeholder="Nom du Plat" ng-model="meal"><br>
+					<input type="text" class="form-control" id="inputIngredient" placeholder="Ingrédients (ex:tomate, sel, etc...)" ng-model="ingredients"><br>
+					<input type="text" class="form-control" id="inputRec" placeholder="La recette" ng-model="recipe"><br>
+				</div>
+				<div class="form-group">
+					<input type='file' ng-model='imageFile' base-sixty-four-input onchange="angular.element(this).scope().previewFile(this)">
+					<img id="preview">
+				</div>
+				<button type="submit" class="btn btn-default" ng-click="add()">Ajouter</button>
+			</form>
+		</div>
+		<div class="class col-md-12">
+			<hr>
+			<h1>{{title}}</h1>
+		</div>
+		<div class="col-md-12">
+			<div class="table-responsive">
+				<table class="table table-striped blue">
+					<thead>
+						<tr>
+							<th>PHOTOS</th>
+							<th>CATEGORIES</th>
+							<th>NOM DU PLAT</th>
+							<th>INGRÉDIENTS</th>
+							<th>RECETTES</th>
+							<th></th>
+						</tr>
+					</thead>
+					<tbody ng-repeat="dish in dishs">
+						<tr>
+							<td>
+								<img class="imgAdd" src="{{dish.image}}">
+							</td>
+							<td>
+								<select class="form-control" ng-model="dish.category" id="inputCat">
+									<option value="entrée">entrée</option>
+									<option value="plat">plat</option>
+									<option value="dessert">dessert</option>
+								</select>
+							</td>
+							<td>
+								<input type="text" class="form-control" id="inputPlat" ng-model="dish.meal">
+							</td>
+							<td>
+								<input type="text" class="form-control" id="inputIngredient" ng-model="dish.ingredients">
+							</td>
+							<td>
+								<input type="text" class="form-control" id="inputRec" ng-model="dish.recipe">
+							</td>
+							<td>
+								<button type="submit" class="btn btn-default" ng-click="update(dish)">Maj</button>
+								<button type="submit" class="btn btn-danger" ng-click="delete(dish)">X</button>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>
