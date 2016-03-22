@@ -1,13 +1,32 @@
 <h1>{{title}}</h1>
 
-<ul class="list-group grey">
-	<div ng-controller="guestController">	
-		<li class="list-group-item" ng-repeat="guest in guests">
-			<form class="form-inline">
-				<div class="form-group">
-					{{guest.name}}
-				</div>
-			</form>
-		</li>
+<div class="row">
+	<div class="col-md-6">
+		<ul>
+			<div ng-controller="guestController">	
+				<li class="list-group-item" ng-repeat="guest in guests">
+					<form class="form-inline">
+						<div class="form-group">
+							{{guest.name}}
+							<input type="checkbox" ng-model="select" ng-click="clickselect(guest)">
+							<!-- <tt>value1 = {{guest.checked}}</tt> -->
+						</div>
+					</form>
+				</li>
+			</div>
+		</ul>
 	</div>
-</ul>
+	<div class="col-md-6">
+		<ul>
+			<div ng-controller="dishController">
+				<li class="list-group-item" ng-repeat="dish in dishs">
+					<form class="form-inline">
+						<div class="form-group">
+							{{dish.meal}}
+						</div>
+					</form>
+				</li>
+			</diV>
+		</ul>
+	</div>
+</div>

@@ -41,4 +41,6 @@ function guestController($scope, $http, guestService) {
 		});
 	}
 	load();
+
 }
+
