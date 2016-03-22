@@ -1,7 +1,8 @@
 
 body {
 	padding-top: 70px;
-	background-color: #009DE3
+	background-image: url(../img/fond.jpg);
+
 }
 
 .navbar-border {
@@ -21,15 +22,42 @@ h1 {
 	color: white;
 }
 
-.blue li {
-	background-color: #009DE3;
-	border: 1px solid rgba(255,255,255, 0.5);
+.white {
+	color: white;
+}
+
+.transparent li {
+	background-color: transparent;
+	color: white;
+}
+
+.table-striped > tbody > tr:nth-of-type(2n+1) {
+	background-color: transparent;	
 }
 
 .imgAdd {
 	max-width: 100px;
-	margin-left: 50px;
+	margin-left: 20px;
 }
-#inputPlat {
+
+.champs {
 	margin: 20px 0;
+}
+
+th {
+	text-align: center;
+	color: white;
+}
+#inputName, #inputAllery, #inputHated {
+
+	width: 250px;
+}
+
+hr.soften {
+  height: 1px;
+  background-image: -webkit-linear-gradient(left, rgba(255,255,255,0), rgba(255,255,255,.8), rgba(255,255,255,0));
+  background-image:    -moz-linear-gradient(left, rgba(255,255,255,0), rgba(255,255,255,.8), rgba(255,255,255,0));
+  background-image:     -ms-linear-gradient(left, rgba(255,255,255,0), rgba(255,255,255,.8), rgba(255,255,255,0));
+  background-image:      -o-linear-gradient(left, rgba(255,255,255,0), rgba(255,255,255,.8), rgba(255,255,255,0));
+  border: 0;
 }

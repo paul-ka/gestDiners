@@ -1,32 +1,33 @@
 <h1>{{title}}</h1>
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-6">
+			<ul class="list-group transparent">
+				<div ng-controller="guestController">	
+					<li class="list-group-item" ng-repeat="guest in guests">
+						<form class="form-inline">
+							<div class="form-group">
+									<input type="checkbox" ng-model="guest.select" ng-click="clickselect(guest)">
+								{{guest.name}}
+							</div>
+						</form>
+					</li>
 
-<div class="row">
-	<div class="col-md-6">
-		<ul>
-			<div ng-controller="guestController">	
-				<li class="list-group-item" ng-repeat="guest in guests">
-					<form class="form-inline">
-						<div class="form-group">
-							{{guest.name}}
-							<input type="checkbox" ng-model="select" ng-click="clickselect(guest)">
-							<!-- <tt>value1 = {{guest.checked}}</tt> -->
-						</div>
-					</form>
-				</li>
-			</div>
-		</ul>
-	</div>
-	<div class="col-md-6">
-		<ul>
-			<div ng-controller="dishController">
-				<li class="list-group-item" ng-repeat="dish in dishs">
-					<form class="form-inline">
-						<div class="form-group">
-							{{dish.meal}}
-						</div>
-					</form>
-				</li>
-			</diV>
-		</ul>
+				</div>
+			</ul>
+		</div>
+		<div class="col-md-6">
+			<ul class="list-group transparent">
+				<div ng-controller="dishController">	
+					<li class="list-group-item" ng-repeat="dish in dishs" ng-hide="trusty">
+						<form class="form-inline">
+							<div class="form-group">
+								{{dish.meal}}
+							</div>
+						</form>
+					</li>
+				</div>
+			</ul>
+		</div>
 	</div>
 </div>

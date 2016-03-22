@@ -1,51 +1,113 @@
 <div class="container-fluid">
-	<h1>Entrer un nouveau plat</h1>
+	<h1>Entrer un nouveau plat</h1><br>
 	<div class="row">
 		<div class="col-md-8">
 			<form class="plats">
 				<div class="form-group">
 
-					<input type="text" class="form-control" id="inputPlat" placeholder="Plat" ng-model="meal">
-					<input type="text" class="form-control" id="inputIngredient" placeholder="Ingrédients (ex:tomate, sel, etc...)" ng-model="ingredients">
+					<select class="form-control" id="inputCat" ng-model="category">
+						<option value=""disabled selected hidden>Choix de la catégorie...</option>
+						<option value="entrée">entrée</option>
+						<option value="plat">plat</option>
+						<option value="dessert">dessert</option>
+					</select><br>
+					<input type="text" class="form-control" id="inputPlat" placeholder="Nom du Plat" ng-model="meal"><br>
+					<input type="text" class="form-control" id="inputIngredient" placeholder="Ingrédients (ex:tomate, sel, etc...)" ng-model="ingredients"><br>
+					<input type="text" class="form-control" id="inputRec" placeholder="La recette" ng-model="recipe"><br>
 				</div>
-				<div class="form-group">
-
+				<div class="form-group white">
 					<input type='file' ng-model='imageFile' base-sixty-four-input onchange="angular.element(this).scope().previewFile(this)">
-
+					<img id="preview">
 				</div>
-				<img id="preview">
-
-				<button type="submit" class="btn btn-default" ng-click="add()">Ajouter</button>
-
+				<button type="submit" class="btn btn-info" ng-click="add()">Ajouter</button>
 			</form>
 		</div>
 		<div class="class col-md-12">
-			<hr>
+			<hr class="soften">
 			<h1>{{title}}</h1>
 		</div>
 		<div class="col-md-12">
-			<ul class="list-group blue">
-				<li class="list-group-item" ng-repeat="dish in dishs">
-					<form class="form-inline">
-						<div class="form-group">
-							<input type="text" class="form-control" id="inputMessage" ng-model="dish.meal">
-						</div>
-						<div class="form-group">
-							<input type="text" class="form-control" id="inputMessage" ng-model="dish.ingredients">
-						</div>
-						<div class="form-group">
-							<img class="imgAdd" src="{{dish.image}}">
-						</div>
-
-						<div class="pull-right form-inline">
-							<button type="submit" class="btn btn-default" ng-click="update(dish)">Maj</button>
-							<button type="submit" class="btn btn-danger" ng-click="delete(dish)">X</button>
-						</div>
+			<div class="table-responsive">
+				<table class="table table-striped transparent">
+					<thead>
+						<tr>
+							<th>PHOTOS</th>
+							<th>CATEGORIES</th>
+							<th>NOM DU PLAT</th>
+							<th>INGRÉDIENTS</th>
+							<th>RECETTES</th>
+							<th>NOTES</th>
+						</tr>
+					</thead>
+					<tbody ng-repeat="dish in dishs">
+						<tr>
+							<td>
+								<img class="imgAdd" src="{{dish.image}}">
+							</td>
+							<td>
+								<select class="form-control" ng-model="dish.category" id="inputCat">
+									<option value="entrée">entrée</option>
+									<option value="plat">plat</option>
+									<option value="dessert">dessert</option>
+								</select>
+							</td>
+							<td>
+								<input type="text" class="form-control" id="inputPlat" ng-model="dish.meal">
+							</td>
+							<td>
+								<input type="text" class="form-control" id="inputIngredient" ng-model="dish.ingredients">
+							</td>
+							<td>
+								<input type="text" class="form-control" id="inputRec" ng-model="dish.recipe">
+							</td>
+							<td>
+							    <div class="btn-group" role="group">
+									<!-- Etoile 1 -->
+									<button ng-show="dish.stars>=1" ng-click="dish.stars=1;update(dish)" type="button" class="btn btn-warning">
+									<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+									</button>
+									<button ng-hide="dish.stars>=1" ng-click="dish.stars=1;update(dish)" type="button" class="btn btn-warning">
+									<span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
+									</button>
+									<!-- Etoile 2 -->
+									<button ng-show="dish.stars>=2" ng-click="dish.stars=2;update(dish)" type="button" class="btn btn-warning">
+									<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+									</button>
+									<button ng-hide="dish.stars>=2" ng-click="dish.stars=2;update(dish)" type="button" class="btn btn-warning">
+									<span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
+									</button>
+									<!-- Etoile 3 -->
+									<button ng-show="dish.stars>=3" ng-click="dish.stars=3;update(dish)" type="button" class="btn btn-warning">
+									<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+									</button>
+									<button ng-hide="dish.stars>=3" ng-click="dish.stars=3;update(dish)" type="button" class="btn btn-warning">
+									<span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
+									</button>
+									<!-- Etoile 4 -->
+									<button ng-show="dish.stars>=4" ng-click="dish.stars=4;update(dish)" type="button" class="btn btn-warning">
+									<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+									</button>
+									<button ng-hide="dish.stars>=4" ng-click="dish.stars=4;update(dish)" type="button" class="btn btn-warning">
+									<span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
+									</button>
+									<!-- Etoile 5 -->
+									<button ng-show="dish.stars>=5" ng-click="dish.stars=5;update(dish)" type="button" class="btn btn-warning">
+									<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+									</button>
+									<button ng-hide="dish.stars>=5" ng-click="dish.stars=5;update(dish)" type="button" class="btn btn-warning">
+									<span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
+									</button>
+								</div>
+								<br><br>
+								<div class="pull-center">
+								<button type="submit" class="btn btn-info" ng-click="update(dish)">Maj</button>
+								<button type="submit" class="btn btn-danger" ng-click="delete(dish)">X</button>
+								</div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
 		</div>
-
-		</li>
-		</ul>
-
 	</div>
-</div>
 </div>

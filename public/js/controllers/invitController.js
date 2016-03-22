@@ -1,5 +1,5 @@
 // MAIN CONTROLLER DISH
-function invitController($scope, $http, invitService, guestService) {
+function invitController($scope, $http, invitService, guestService, dishService) {
 	$scope.title = "Liste des invitations";
 	
 	function load(){
@@ -8,6 +8,9 @@ function invitController($scope, $http, invitService, guestService) {
 		});
 		guestService.get().then(function(res){
 			$scope.guests = res.data;
+		});
+		dishService.get().then(function(res){
+			$scope.dishs = res.data;
 		});
 	}
 	$scope.add = function(){

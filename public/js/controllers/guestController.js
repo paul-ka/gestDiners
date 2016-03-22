@@ -5,12 +5,10 @@ function guestController($scope, $http, guestService) {
 	$scope.i = 0; 
 	$scope.suivant = function(i){		
 		$scope.i++;
-	}
-	
+	}	
 	$scope.precedent = function(i) {
-		$scope.i--
+		$scope.i--;
 	}
-	
 	function load(){
 		guestService.get().then(function(res){
 			$scope.guests = res.data;

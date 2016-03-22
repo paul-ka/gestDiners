@@ -16,7 +16,6 @@ function config($routeProvider) {
 		.when('/party', {
 			templateUrl: 'views/party.html',
 			controller: 'partyController',
-			controller: 'mealController'
 		})
 		.otherwise({
 			redirectTo: '/'

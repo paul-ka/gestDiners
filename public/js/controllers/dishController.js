@@ -11,6 +11,8 @@ function dishController($scope, $http, dishService) {
 		var data = {};
 		data.meal = $scope.meal;
 		data.ingredients = $scope.ingredients;
+		data.category = $scope.category;
+		data.recipe = $scope.recipe;
 
 		data.image = $scope.imageFile;
 		dishService.create(data).then(function (res) {
@@ -18,6 +20,8 @@ function dishController($scope, $http, dishService) {
 		});
 		$scope.meal = "";
 		$scope.ingredients = "";
+		$scope.category = "";
+		$scope.recipe = "";
 
 		$scope.imageFile = "";
 		location.reload();
