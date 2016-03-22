@@ -2,7 +2,6 @@
 <div class="container-fluid">
 	<div class="row">
 		<div class="col-md-6">
-
 			<ul class="list-group transparent">
 				<div ng-controller="guestController">	
 					<li class="list-group-item" ng-repeat="guest in guests">
@@ -10,7 +9,6 @@
 							<div class="form-group">
 									<input type="checkbox" ng-model="guest.select" ng-click="clickselect(guest)">
 								{{guest.name}}
-								
 							</div>
 						</form>
 					</li>
@@ -19,13 +17,12 @@
 			</ul>
 		</div>
 		<div class="col-md-6">
-
 			<ul class="list-group transparent">
-				<div ng-controller="guestController">	
-					<li class="list-group-item" ng-repeat="guest in guests">
+				<div ng-controller="dishController">	
+					<li class="list-group-item" ng-repeat="dish in dishs" ng-hide="trusty">
 						<form class="form-inline">
 							<div class="form-group">
-								{{guest.name}}
+								{{dish.meal}}
 							</div>
 						</form>
 					</li>
