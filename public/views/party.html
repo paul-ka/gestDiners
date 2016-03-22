@@ -1,13 +1,37 @@
 <h1>{{title}}</h1>
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-6">
 
-<ul class="list-group grey">
-	<div ng-controller="guestController">	
-		<li class="list-group-item" ng-repeat="guest in guests">
-			<form class="form-inline">
-				<div class="form-group">
-					{{guest.name}}
+			<ul class="list-group grey">
+				<div ng-controller="guestController">	
+					<li class="list-group-item" ng-repeat="guest in guests">
+						<form class="form-inline">
+							<div class="form-group">
+								{{guest.name}}
+								<span class="pull-right">
+									<input type="checkbox" ng-model="select">
+								</span>
+								
+							</div>
+						</form>
+					</li>
 				</div>
-			</form>
-		</li>
+			</ul>
+		</div>
+		<div class="col-md-6">
+
+			<ul class="list-group grey">
+				<div ng-controller="guestController">	
+					<li class="list-group-item" ng-repeat="guest in guests">
+						<form class="form-inline">
+							<div class="form-group">
+								{{guest.name}}
+							</div>
+						</form>
+					</li>
+				</div>
+			</ul>
+		</div>
 	</div>
-</ul>
+</div>
