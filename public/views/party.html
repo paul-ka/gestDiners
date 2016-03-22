@@ -8,10 +8,8 @@
 					<li class="list-group-item" ng-repeat="guest in guests">
 						<form class="form-inline">
 							<div class="form-group">
+									<input type="checkbox" ng-model="select" ng-click="clickselect(guest)">
 								{{guest.name}}
-								<span class="pull-right">
-									<input type="checkbox" ng-model="select">
-								</span>
 								
 							</div>
 						</form>
