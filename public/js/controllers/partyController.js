@@ -8,6 +8,7 @@ function partyController($scope, $http, partyService) {
 	}
 	$scope.clickselect = function (guest) {
 		alert(guest.name);
+		alert(guest.select);
 	}
 
 	load();
