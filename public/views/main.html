@@ -1,60 +1,74 @@
+<img class="titleCenter" src="../img/title.png" alt="Un Diner Plus Que Parfait">
+<br>
+<hr class="soften">
+<br>
+<br>
 <h1>{{title}}</h1>
 <form class="form-inline" name="myForm" novalidate>
 	<div class="form-group">
 		<select ng-model="inputInvite" class="form-control">
-		    <option ng-repeat="guest in guests"
-		            value="{{guest.name}}">
-		      {{guest.name}}
-		    </option>
+			<option ng-repeat="guest in guests" value="{{guest.name}}">
+				{{guest.name}}
+			</option>
 		</select>
-
-		<input type="texte" class="form-control" id="inputDate" name='date'
-			   placeholder="jj/mm/aaaaa" ng-model="inputDate" pattern="\d+/\d+/\d+">
-
+		<input type="texte" class="form-control" id="inputDate" name='date' placeholder="jj/mm/aaaaa" ng-model="inputDate" pattern="\d+/\d+/\d+">
 		<select ng-model="inputEntree" class="form-control">
-		    <option ng-repeat="dish in dishs | filter : {category: 'entrée'}"
-		            value="{{dish.meal}}">
-		      {{dish.meal}}
-		    </option>
+			<option ng-repeat="dish in dishs | filter : {category: 'entrée'}" value="{{dish.meal}}">
+				{{dish.meal}}
+			</option>
 		</select>
 		<select ng-model="inputPlat" class="form-control">
-		    <option ng-repeat="dish in dishs | filter : {category: 'plat'}"
-		            value="{{dish.meal}}">
-		      {{dish.meal}}
-		    </option>
+			<option ng-repeat="dish in dishs | filter : {category: 'plat'}" value="{{dish.meal}}">
+				{{dish.meal}}
+			</option>
 		</select>
 		<select ng-model="inputDessert" class="form-control">
-		    <option ng-repeat="dish in dishs | filter : {category: 'dessert'}"
-		            value="{{dish.meal}}">
-		      {{dish.meal}}
-		    </option>
+			<option ng-repeat="dish in dishs | filter : {category: 'dessert'}" value="{{dish.meal}}">
+				{{dish.meal}}
+			</option>
 		</select>
 	</div>
-	<button type="submit" class="btn btn-default"  ng-click="add()">Ajouter</button>
+	<button type="submit" class="btn btn-default" ng-click="add()">Ajouter</button>
 	<div ng-show="myForm.date.$invalid">Format de date incorrect</div>
-</form>
-<hr>
-<ul class="list-group transparent"
+</form><br>
+<hr class="soften">
 
-	<li class="list-group-item" ng-repeat="invit in invits">
-
-		<form class="form-inline">
-			<div class="form-group">
-				<input type="text" class="form-control" id="inputInvite" 
-					   ng-model="invit.inputInvite">
-				<input type="text" class="form-control" id="inputDate" 
-					   ng-model="invit.inputDate">
-				<input type="text" class="form-control" id="inputEntree" 
-					   ng-model="invit.inputEntree">
-				<input type="text" class="form-control" id="inputPlat" 
-					   ng-model="invit.inputPlat">
-				<input type="text" class="form-control" id="inputDessert" 
-					   ng-model="invit.inputDessert">
-			</div>
-			<div class="pull-right">
-				<button type="submit" class="btn btn-info glyphicon glyphicon-ok-sign" ng-click="update(invit)"></button>
-				<button type="submit" class="btn btn-danger glyphicon glyphicon-remove-sign" ng-click="delete(invit)"></button>
-			</div>
-		</form>
-	</li>
-</ul>
+<div class="table-responsive">
+	<table class="table table-striped transparent">
+		<thead>
+			<tr>
+				<th>NOM</th>
+				<th>DATE</th>
+				<th>ENTRÉE</th>
+				<th>PLAT</th>
+				<th>DESSERT</th>
+				<th></th>
+			</tr>
+		</thead>
+		<tbody ng-repeat="invit in invits">
+			<tr>
+				<td>
+					<input type="text" class="form-control" id="inputInvite" ng-model="invit.inputInvite">
+				</td>
+				<td>
+					<input type="text" class="form-control" id="inputDate" ng-model="invit.inputDate">
+				</td>
+				<td>
+					<input type="text" class="form-control" id="inputEntree" ng-model="invit.inputEntree">
+				</td>
+				<td>
+					<input type="text" class="form-control" id="inputPlat" ng-model="invit.inputPlat">
+				</td>
+				<td>
+					<input type="text" class="form-control" id="inputDessert" ng-model="invit.inputDessert">
+				</td>
+				<td>
+					<div class="pull-right">
+						<button type="submit" class="btn btn-info glyphicon glyphicon-ok-sign" ng-click="update(invit)"></button>
+						<button type="submit" class="btn btn-danger glyphicon glyphicon-remove-sign" ng-click="delete(invit)"></button>
+					</div>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
