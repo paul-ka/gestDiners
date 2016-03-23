@@ -1,6 +1,6 @@
 <div class="container-fluid">
-	<div class="row">
-		<div class="col-md-offset-3 col-md-10">
+	<div class="row marge">
+		<div class="col-md-offset-1 col-md-10">
 			<h1>Ajouter un nouvel ami</h1><br>
 			<form class="form-inline">
 				<div class="form-group">
@@ -32,26 +32,37 @@
 		<div class="row">
 			<div class="col-md-offset-1 col-md-10 col-md-offset-1">
 				<h1>{{title}}</h1>
-				<ul class="list-group transparent">
-					<li class="list-group-item" ng-repeat="guest in guests">
-						<form class="form-inline">
-							<div class="form-group">
-
-								<input type="text" class="form-control" id="inputName" ng-model="guest.name">
-							</div>
-							<div class="form-group">
-								<input type="text" class="form-control" id="inputAllery" ng-model="guest.allergy">
-							</div>
-							<div class="form-group">
-								<input type="text" class="form-control" id="inputHated" ng-model="guest.hated">
-							</div>
-							<div class="pull-right">
-								<button type="submit" class="btn btn-info glyphicon glyphicon-ok" ng-click="update(guest)"></button>
-								<button type="submit" class="btn btn-danger glyphicon glyphicon-remove-sign" ng-click="delete(guest)"></button>
-							</div>
-						</form>
-					</li>
-				</ul>
+				<div class="table-responsive">
+					<table class="table table-striped transparent">
+						<thead>
+							<tr>
+								<th>NOM</th>
+								<th>ALLERGIE</th>
+								<th>ALIMENT A PROSCRIRE</th>
+								<th></th>
+							</tr>
+						</thead>
+						<tbody ng-repeat="guest in guests">
+							<tr>
+								<td>
+									<input type="text" class="form-control" id="inputName" ng-model="guest.name">
+								</td>
+								<td>
+									<input type="text" class="form-control" id="inputAllergy" ng-model="guest.allergy">
+								</td>
+								<td>
+									<input type="text" class="form-control" id="inputHated" ng-model="guest.hated">
+								</td>
+								<td>
+									<div class="pull-right">
+										<button type="submit" class="btn btn-info glyphicon glyphicon-ok" ng-click="update(guest)"></button>
+										<button type="submit" class="btn btn-danger glyphicon glyphicon-remove-sign" ng-click="delete(guest)"></button>
+									</div>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
 			</div>
 		</div>
 	</div>

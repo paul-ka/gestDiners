@@ -61,3 +61,7 @@ hr.soften {
   background-image:      -o-linear-gradient(left, rgba(255,255,255,0), rgba(255,255,255,.8), rgba(255,255,255,0));
   border: 0;
 }
+
+.marge {
+margin-left: 10px;
+}
