@@ -13,11 +13,12 @@ function partyController($scope, $http, partyService, dishService, guestService)
 		});
 
 	}
-	$scope.clickselect = function (guest) {
+	$scope.clickselect = function (guest, dish) {
 		$scope.trusty = [];
-			
-		if ((guest.select == true) && (($scope.dishs.ingredients == $scope.guests.allergy) || ($scope.dishs.ingredients == $scope.guests.hated))){
-			$scope.trusty = true;
+		if (guest.select == true){	
+			if ($scope.dishs == $scope.guests){
+				$scope.trusty = true;
+			};
 		}
 		else {
 			$scope.trusty = false;

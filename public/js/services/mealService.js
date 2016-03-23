@@ -1,3 +1,0 @@
-/*function mealService($http) {
-	
-};*/
