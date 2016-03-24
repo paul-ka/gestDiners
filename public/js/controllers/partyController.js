@@ -1,4 +1,4 @@
-function partyController($scope, $http, partyService, dishService, guestService) {
+function partyController($scope, $http, partyService, dishService, guestService, invitService) {
 	$scope.title = "Un Diner Plus Que Parfait"
 
 	function load() {
@@ -13,6 +13,9 @@ function partyController($scope, $http, partyService, dishService, guestService)
 		});
 		guestService.get().then(function (res) {
 			$scope.guests = res.data;
+		});
+		invitService.get().then(function (res) {
+			$scope.invits = res.data;
 		});
 
 	}
@@ -29,6 +32,13 @@ function partyController($scope, $http, partyService, dishService, guestService)
 					&& ($scope.guests[j].hated.length > 0)
 					&& ($scope.guests[j].select == true)){
 					$scope.dishs[i].trusty = false;}
+				for (var k = 0; k < $scope.invits.length; k++){
+					if (($scope.guests[j].name.length == $scope.invits[k].inputInvite.length)
+						&& ($scope.dishs[i].meal.toLowerCase().indexOf($scope.invits[k].inputEntree.toLowerCase()) > -1) 
+						&& ($scope.invits[k].inputEntree.length > 0)
+						&& ($scope.guests[j].select == true)){
+						$scope.dishs[i].trusty = false;}
+				}
 			}
 		}
 	}
