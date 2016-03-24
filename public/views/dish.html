@@ -1,27 +1,33 @@
 <img class="titleCenter" src="../img/title.png" alt="Un Diner Plus Que Parfait">
 <br>
 <hr class="soften">
-<br><br>
-<div class="container-fluid">	
+<br>
+<br>
+<div class="container-fluid">
 	<div class="row">
 		<div class="col-md-offset-2 col-md-8">
-		<h1>Entrer un nouveau plat</h1><br>
+			<h1>Entrer un nouveau plat</h1>
+			<br>
 			<form class="plats">
 				<div class="form-group">
 
 					<select class="form-control" id="inputCat" ng-model="category">
-						<option value=""disabled selected hidden>Choix de la catégorie...</option>
+						<option value="" disabled selected hidden>Choix de la catégorie...</option>
 						<option value="entrée">entrée</option>
 						<option value="plat">plat</option>
 						<option value="dessert">dessert</option>
-					</select><br>
-					<input type="text" class="form-control" id="inputPlat" placeholder="Nom du Plat" ng-model="meal"><br>
-					<input type="text" class="form-control" id="inputIngredient" placeholder="Ingrédients (ex:tomate, sel, etc...)" ng-model="ingredients"><br>
-					<input type="text" class="form-control" id="inputRec" placeholder="La recette" ng-model="recipe"><br>
+					</select>
+					<br>
+					<input type="text" class="form-control" id="inputPlat" placeholder="Nom du Plat" ng-model="meal">
+					<br>
+					<input type="text" class="form-control" id="inputIngredient" placeholder="Ingrédients (ex:tomate, sel, etc...)" ng-model="ingredients">
+					<br>
+					<input type="text" class="form-control" id="inputRec" placeholder="La recette" ng-model="recipe">
+					<br>
 				</div>
 				<div class="form-group white">
 					<input type='file' ng-model='imageFile' base-sixty-four-input onchange="angular.element(this).scope().previewFile(this)">
-					<img id="preview">
+					<img class="charger" id="preview">
 				</div>
 				<button type="submit" class="btn btn-info" ng-click="add()">Ajouter</button>
 			</form>
@@ -49,7 +55,7 @@
 								<img class="imgAdd" src="{{dish.image}}">
 							</td>
 							<td>
-								<select class="form-control" ng-model="dish.category" id="inputCat">
+								<select class="form-control" id="inputCat" ng-model="dish.category">
 									<option value="entrée">entrée</option>
 									<option value="plat">plat</option>
 									<option value="dessert">dessert</option>
@@ -65,47 +71,49 @@
 								<input type="text" class="form-control" id="inputRec" ng-model="dish.recipe">
 							</td>
 							<td>
-							    <div class="btn-group" role="group">
+								<div class="btn-group" role="group">
 									<!-- Etoile 1 -->
 									<button ng-show="dish.stars>=1" ng-click="dish.stars=1;update(dish)" type="button" class="btn btn-warning">
-									<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+										<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
 									</button>
 									<button ng-hide="dish.stars>=1" ng-click="dish.stars=1;update(dish)" type="button" class="btn btn-warning">
-									<span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
+										<span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
 									</button>
 									<!-- Etoile 2 -->
 									<button ng-show="dish.stars>=2" ng-click="dish.stars=2;update(dish)" type="button" class="btn btn-warning">
-									<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+										<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
 									</button>
 									<button ng-hide="dish.stars>=2" ng-click="dish.stars=2;update(dish)" type="button" class="btn btn-warning">
-									<span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
+										<span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
 									</button>
 									<!-- Etoile 3 -->
 									<button ng-show="dish.stars>=3" ng-click="dish.stars=3;update(dish)" type="button" class="btn btn-warning">
-									<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+										<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
 									</button>
 									<button ng-hide="dish.stars>=3" ng-click="dish.stars=3;update(dish)" type="button" class="btn btn-warning">
-									<span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
+										<span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
 									</button>
 									<!-- Etoile 4 -->
 									<button ng-show="dish.stars>=4" ng-click="dish.stars=4;update(dish)" type="button" class="btn btn-warning">
-									<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+										<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
 									</button>
 									<button ng-hide="dish.stars>=4" ng-click="dish.stars=4;update(dish)" type="button" class="btn btn-warning">
-									<span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
+										<span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
 									</button>
 									<!-- Etoile 5 -->
 									<button ng-show="dish.stars>=5" ng-click="dish.stars=5;update(dish)" type="button" class="btn btn-warning">
-									<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+										<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
 									</button>
 									<button ng-hide="dish.stars>=5" ng-click="dish.stars=5;update(dish)" type="button" class="btn btn-warning">
-									<span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
+										<span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
 									</button>
 								</div>
-								<br><br>
+								<br>
+								<br>
 								<div class="pull-center">
-								<button type="submit" class="btn btn-info" ng-click="update(dish)">Maj</button>
-								<button type="submit" class="btn btn-danger" ng-click="delete(dish)">X</button>
+									<button type="submit" class="btn btn-info" ng-click="update(dish)">Maj</button>
+									<button type="submit" class="btn btn-danger" ng-click="delete(dish)">X</button>
+									<button type="button" class="btn btn-default" ng-show=""data-toggle="modal" data-target="#myModal">Recette</button>
 								</div>
 							</td>
 						</tr>
