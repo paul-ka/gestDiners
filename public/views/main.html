@@ -37,7 +37,15 @@
 	<table class="table table-striped transparent">
 		<thead>
 			<tr>
-				<th>NOM</th>
+				<th>
+					<select ng-model="choseInvite" class="form-control">
+						<option value=""disabled selected hidden>Filtrer par invité...</option>
+						<option value="">Tous...</option>
+						<option ng-repeat="guest in guests" value="{{guest.name}}">
+							{{guest.name}}
+						</option>
+					</select>
+				</th>
 				<th>DATE</th>
 				<th>ENTRÉE</th>
 				<th>PLAT</th>
@@ -45,7 +53,7 @@
 				<th></th>
 			</tr>
 		</thead>
-		<tbody ng-repeat="invit in invits">
+		<tbody ng-repeat="invit in invits|filter:choseInvite:inputInvite">
 			<tr>
 				<td>
 					<input type="text" class="form-control" id="inputInvite" ng-model="invit.inputInvite">
