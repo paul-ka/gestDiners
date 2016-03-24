@@ -8,7 +8,9 @@ body {
 	background-image: url(../img/fond.jpg);
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
 	color: white;
 	font-family: "forgotten_futurist_rg", serif;
 }
@@ -23,7 +25,13 @@ h1, h2, h3 {
 
 .navbar-header img:hover {
 	transform: rotate(360deg);
+}
 
+.titleCenter img {
+	transition: 0.4s;
+}
+.titleCenter img:hover {
+	transform: rotate(360deg);
 }
 
 .white {
@@ -36,7 +44,7 @@ h1, h2, h3 {
 }
 
 .table-striped > tbody > tr:nth-of-type(2n+1) {
-	background-color: transparent;	
+	background-color: transparent;
 }
 
 .imgAdd {
@@ -50,39 +58,56 @@ h1, h2, h3 {
 	margin-left: auto;
 	margin-right: auto;
 }
-}
 
+
+}
 .champs {
 	margin: 20px 0;
 }
-
 th {
 	text-align: center;
 	color: white;
 }
-#inputName, #inputAllery, #inputHated {
-
+#inputName,
+#inputAllery,
+#inputHated {
 	width: 250px;
 }
-
 hr.soften {
 	height: 1px;
-	background-image: -webkit-linear-gradient(left, rgba(255,255,255,0), rgba(255,255,255,.8), rgba(255,255,255,0));
-	background-image:    -moz-linear-gradient(left, rgba(255,255,255,0), rgba(255,255,255,.8), rgba(255,255,255,0));
-	background-image:     -ms-linear-gradient(left, rgba(255,255,255,0), rgba(255,255,255,.8), rgba(255,255,255,0));
-	background-image:      -o-linear-gradient(left, rgba(255,255,255,0), rgba(255,255,255,.8), rgba(255,255,255,0));
+	background-image: -webkit-linear-gradient(left, rgba(229, 0, 122, 0), rgba(229, 0, 122, .8), rgba(229, 0, 122, 0));
+	background-image: -moz-linear-gradient(left, rgba(229, 0, 122, 0), rgba(229, 0, 122, .8), rgba(229, 0, 122, 0));
+	background-image: -ms-linear-gradient(left, rgba(229, 0, 122, 0), rgba(229, 0, 122, .8), rgba(229, 0, 122, 0));
+	background-image: -o-linear-gradient(left, rgba(229, 0, 122, 0), rgba(229, 0, 122, .8), rgba(229, 0, 122, 0));
 	border: 0;
 }
-
 .marge {
 	margin-left: 10px;
 }
-
 .center {
 	text-align: center;
 }
-
 .caro {
+	border-radius: 100%;
+	border: 1px solid white;
+	margin-left: 50px;
+	margin-top: 20px;
+}
+
+
+.hover08 figure img {
+	-webkit-filter: grayscale(100%);
+	filter: grayscale(100%);
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+	border-radius: 100%;
+	border: 1px solid white;
+	margin-left: 50px;
+	margin-top: 20px;
+}
+.hover08 figure:hover img {
+	-webkit-filter: grayscale(0);
+	filter: grayscale(0);
 	border-radius: 100%;
 	border: 1px solid white;
 	margin-left: 50px;
