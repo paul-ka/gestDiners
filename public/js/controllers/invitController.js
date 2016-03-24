@@ -1,6 +1,6 @@
 // MAIN CONTROLLER DISH
 function invitController($scope, $http, invitService, guestService, dishService) {
-	$scope.title = "Liste des invitations";
+	$scope.title = "Historique des invitations";
 	
 	function load(){
 		invitService.get().then(function(res){

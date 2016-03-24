@@ -1,8 +1,16 @@
+@font-face {
+	font-family: "ma_police";
+	src: url("font/forgotten_futurist_rg.ttf");
+}
 
 body {
 	padding-top: 70px;
 	background-image: url(../img/fond.jpg);
+}
 
+h1, h2, h3 {
+	color: white;
+	font-family: "forgotten_futurist_rg", serif;
 }
 
 .navbar-border {
@@ -16,10 +24,6 @@ body {
 .navbar-header img:hover {
 	transform: rotate(360deg);
 
-}
-
-h1 {
-	color: white;
 }
 
 .white {
@@ -40,6 +44,14 @@ h1 {
 	margin-left: 20px;
 }
 
+.titleCenter {
+	display: block;
+	width: 40%;
+	margin-left: auto;
+	margin-right: auto;
+}
+}
+
 .champs {
 	margin: 20px 0;
 }
@@ -54,10 +66,25 @@ th {
 }
 
 hr.soften {
-  height: 1px;
-  background-image: -webkit-linear-gradient(left, rgba(255,255,255,0), rgba(255,255,255,.8), rgba(255,255,255,0));
-  background-image:    -moz-linear-gradient(left, rgba(255,255,255,0), rgba(255,255,255,.8), rgba(255,255,255,0));
-  background-image:     -ms-linear-gradient(left, rgba(255,255,255,0), rgba(255,255,255,.8), rgba(255,255,255,0));
-  background-image:      -o-linear-gradient(left, rgba(255,255,255,0), rgba(255,255,255,.8), rgba(255,255,255,0));
-  border: 0;
+	height: 1px;
+	background-image: -webkit-linear-gradient(left, rgba(255,255,255,0), rgba(255,255,255,.8), rgba(255,255,255,0));
+	background-image:    -moz-linear-gradient(left, rgba(255,255,255,0), rgba(255,255,255,.8), rgba(255,255,255,0));
+	background-image:     -ms-linear-gradient(left, rgba(255,255,255,0), rgba(255,255,255,.8), rgba(255,255,255,0));
+	background-image:      -o-linear-gradient(left, rgba(255,255,255,0), rgba(255,255,255,.8), rgba(255,255,255,0));
+	border: 0;
+}
+
+.marge {
+	margin-left: 10px;
+}
+
+.center {
+	text-align: center;
+}
+
+.caro {
+	border-radius: 100%;
+	border: 1px solid white;
+	margin-left: 50px;
+	margin-top: 20px;
 }
