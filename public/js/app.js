@@ -1,16 +1,16 @@
 function config($routeProvider) {
 	$routeProvider
 		.when('/', {
-			templateUrl: 'views/main.html',
-			controller: 'invitController'
+			templateUrl: 'views/dish.html',
+			controller: 'dishController'
 		})
 		.when('/guest', {
 			templateUrl: 'views/guest.html',
 			controller: 'guestController'
 		})
-		.when('/dish', {
-			templateUrl: 'views/dish.html',
-			controller: 'dishController'
+		.when('/historique', {
+			templateUrl: 'views/main.html',
+			controller: 'invitController'
 		})
 
 		.when('/party', {
