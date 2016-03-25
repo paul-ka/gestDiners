@@ -21,6 +21,7 @@ var Dish = {
 			meal: req.body.meal,
 			dessert: req.body.dessert,
 			ingredients: req.body.ingredients,
+			category: req.body.category,
 			image: req.body.image
 		}, function () {
 			res.sendStatus(200);
