@@ -31,11 +31,23 @@ function partyController($scope, $http, partyService, dishService, guestService,
 						&& ($scope.guests[j].hated.length > 0)
 						&& ($scope.guests[j].select == true)){
 					$scope.dishs[i].trusty = false;}
+
 				for (var k = 0; k < $scope.invits.length; k++){
+
 					if (($scope.guests[j].name.length == $scope.invits[k].inputInvite.length)
 							&& ($scope.dishs[i].meal.toLowerCase().indexOf($scope.invits[k].inputEntree.toLowerCase()) > -1) 
 							&& ($scope.invits[k].inputEntree.length > 0)
 							&& ($scope.guests[j].select == true)){
+						$scope.dishs[i].trusty = false;}
+					if (($scope.guests[j].name.length == $scope.invits[k].inputInvite.length)
+						&& ($scope.dishs[i].meal.toLowerCase().indexOf($scope.invits[k].inputPlat.toLowerCase()) > -1) 
+						&& ($scope.invits[k].inputPlat.length > 0)
+						&& ($scope.guests[j].select == true)){
+						$scope.dishs[i].trusty = false;}
+					if (($scope.guests[j].name.length == $scope.invits[k].inputInvite.length)
+						&& ($scope.dishs[i].meal.toLowerCase().indexOf($scope.invits[k].inputDessert.toLowerCase()) > -1) 
+						&& ($scope.invits[k].inputDessert.length > 0)
+						&& ($scope.guests[j].select == true)){
 						$scope.dishs[i].trusty = false;}
 				}
 			}
