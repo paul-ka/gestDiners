@@ -19,30 +19,29 @@ function partyController($scope, $http, partyService, dishService, guestService,
 		});
 
 	}
-
 	$scope.clickselect = function (guest) {
 		for (var i = 0; i < $scope.dishs.length; i++){
 			$scope.dishs[i].trusty = true;
 			for (var j = 0; j < $scope.guests.length; j++){
 				if (($scope.dishs[i].ingredients.toLowerCase().indexOf($scope.guests[j].allergy.toLowerCase()) > -1) 
-					&& ($scope.guests[j].allergy.length > 0)
-					&& ($scope.guests[j].select == true)){
+						&& ($scope.guests[j].allergy.length > 0)
+						&& ($scope.guests[j].select == true)){
 					$scope.dishs[i].trusty = false;}
 				if (($scope.dishs[i].ingredients.toLowerCase().indexOf($scope.guests[j].hated.toLowerCase()) > -1) 
-					&& ($scope.guests[j].hated.length > 0)
-					&& ($scope.guests[j].select == true)){
+						&& ($scope.guests[j].hated.length > 0)
+						&& ($scope.guests[j].select == true)){
 					$scope.dishs[i].trusty = false;}
 				for (var k = 0; k < $scope.invits.length; k++){
 					if (($scope.guests[j].name.length == $scope.invits[k].inputInvite.length)
-						&& ($scope.dishs[i].meal.toLowerCase().indexOf($scope.invits[k].inputEntree.toLowerCase()) > -1) 
-						&& ($scope.invits[k].inputEntree.length > 0)
-						&& ($scope.guests[j].select == true)){
+							&& ($scope.dishs[i].meal.toLowerCase().indexOf($scope.invits[k].inputEntree.toLowerCase()) > -1) 
+							&& ($scope.invits[k].inputEntree.length > 0)
+							&& ($scope.guests[j].select == true)){
 						$scope.dishs[i].trusty = false;}
 				}
 			}
 		}
 	}
-/*version Jerome
+	/*version Jerome
 	$scope.clickselect = function (guest) {
 		var filter = [];
 		for (var i = 0; i < $scope.dishs.length; i++){
