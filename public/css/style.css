@@ -116,6 +116,10 @@ hr.soften {
 
 .charger {
 	height: 100px;
-	width: 100px;
-	
+	width: 100px;	
+}
+
+.preview {
+	height: 200px;
+	width: 200px;	
 }
