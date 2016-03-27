@@ -3,8 +3,13 @@
 function guestController($scope, $http, guestService) {
 	$scope.title = "Mes Amis";
 	$scope.i = 0; 
-	$scope.suivant = function(i){		
-		$scope.i++;
+	$scope.suivant = function(i){	
+		if (($scope.name == undefined) && (i==0)){
+			$scope.nameMessage='Ce champ ne peut être vide';
+		} else {
+			$scope.nameMessage='';
+			$scope.i++;
+		}
 	}	
 	$scope.precedent = function(i) {
 		$scope.i--;

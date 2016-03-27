@@ -24,32 +24,41 @@ function partyController($scope, $http, partyService, dishService, guestService,
 		for (var i = 0; i < $scope.dishs.length; i++){
 			$scope.dishs[i].trusty = true;
 			for (var j = 0; j < $scope.guests.length; j++){
-				if (($scope.dishs[i].ingredients.toLowerCase().indexOf($scope.guests[j].allergy.toLowerCase()) > -1) 
-					&& ($scope.guests[j].allergy.length > 0)
-					&& ($scope.guests[j].select == true)){
-					$scope.dishs[i].trusty = false;}
-				if (($scope.dishs[i].ingredients.toLowerCase().indexOf($scope.guests[j].hated.toLowerCase()) > -1) 
-					&& ($scope.guests[j].hated.length > 0)
-					&& ($scope.guests[j].select == true)){
-					$scope.dishs[i].trusty = false;}
 
-				for (var k = 0; k < $scope.invits.length; k++){
 
-					if (($scope.guests[j].name.length == $scope.invits[k].inputInvite.length)
-						&& ($scope.dishs[i].meal.toLowerCase().indexOf($scope.invits[k].inputEntree.toLowerCase()) > -1) 
-						&& ($scope.invits[k].inputEntree.length > 0)
-						&& ($scope.guests[j].select == true)){
-						$scope.dishs[i].trusty = false;}
-					if (($scope.guests[j].name.length == $scope.invits[k].inputInvite.length)
-						&& ($scope.dishs[i].meal.toLowerCase().indexOf($scope.invits[k].inputPlat.toLowerCase()) > -1) 
-						&& ($scope.invits[k].inputPlat.length > 0)
-						&& ($scope.guests[j].select == true)){
-						$scope.dishs[i].trusty = false;}
-					if (($scope.guests[j].name.length == $scope.invits[k].inputInvite.length)
-						&& ($scope.dishs[i].meal.toLowerCase().indexOf($scope.invits[k].inputDessert.toLowerCase()) > -1) 
-						&& ($scope.invits[k].inputDessert.length > 0)
-						&& ($scope.guests[j].select == true)){
-						$scope.dishs[i].trusty = false;}
+				if ($scope.guests[j].select == true){
+
+					if ($scope.guests[j].allergy.length > 0){
+						allergies=$scope.guests[j].allergy.toLowerCase().split(' ');
+						for (var k = 0; k < allergies.length; k++){
+							if ($scope.dishs[i].ingredients.toLowerCase().indexOf(allergies[k]) > -1){
+							$scope.dishs[i].trusty = false;}
+						}
+					}
+					if ($scope.guests[j].hated.length > 0){
+						hateds=$scope.guests[j].hated.toLowerCase().split(' ');
+						for (var k = 0; k < hateds.length; k++){
+							if ($scope.dishs[i].ingredients.toLowerCase().indexOf(hateds[k]) > -1){
+							$scope.dishs[i].trusty = false;}
+						}
+					}
+	
+					for (var k = 0; k < $scope.invits.length; k++){
+
+						if (($scope.guests[j].name.length == $scope.invits[k].inputInvite.length)
+							&& ($scope.dishs[i].meal.toLowerCase().indexOf($scope.invits[k].inputEntree.toLowerCase()) > -1) 
+							&& ($scope.invits[k].inputEntree.length > 0)){
+							$scope.dishs[i].trusty = false;}
+						if (($scope.guests[j].name.length == $scope.invits[k].inputInvite.length)
+							&& ($scope.dishs[i].meal.toLowerCase().indexOf($scope.invits[k].inputPlat.toLowerCase()) > -1) 
+							&& ($scope.invits[k].inputPlat.length > 0)){
+							$scope.dishs[i].trusty = false;}
+						if (($scope.guests[j].name.length == $scope.invits[k].inputInvite.length)
+							&& ($scope.dishs[i].meal.toLowerCase().indexOf($scope.invits[k].inputDessert.toLowerCase()) > -1) 
+							&& ($scope.invits[k].inputDessert.length > 0)){
+							$scope.dishs[i].trusty = false;}
+						
+					}
 				}
 			}
 		}

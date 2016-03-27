@@ -16,8 +16,8 @@
 						<option value="dessert">dessert</option>
 					</select><br>
 					<input type="text" class="form-control" id="inputPlat" placeholder="Nom du Plat" ng-model="meal"><br>
-					<input type="text" class="form-control" id="inputIngredient" placeholder="Ingrédients (ex:tomate, sel, etc...)" ng-model="ingredients"><br>
-					<input type="text" class="form-control" id="inputRec" placeholder="La recette" ng-model="recipe"><br>
+					<textarea rows="4" class="form-control" id="inputIngredient" placeholder="Ingrédients (ex:tomate, sel, etc...)" ng-model="ingredients"></textarea><br>
+					<textarea rows="4" class="form-control" id="inputRec" placeholder="La recette" ng-model="recipe"></textarea><br>
 				</div>
 				<div class="form-group white">
 					<input type='file' ng-model='imageFile' base-sixty-four-input onchange="angular.element(this).scope().previewFile(this)">
