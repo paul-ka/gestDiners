@@ -1,29 +1,52 @@
 <img class="titleCenter" src="../img/title.png" alt="Un Diner Plus Que Parfait">
 <br>
 <hr class="soften">
-<br><br>
-<div class="container-fluid">	
+<br>
+<br>
+<div class="container-fluid">
 	<div class="row">
 		<div class="col-md-offset-2 col-md-8">
-		<h1>Entrer un nouveau plat</h1><br>
+			<h1>Entrer un nouveau plat</h1>
+			<br>
 			<form class="plats">
 				<div class="form-group">
 
 					<select class="form-control" id="inputCat" ng-model="category">
-						<option value=""disabled selected hidden>Choix de la catégorie...</option>
+						<option value="" disabled selected hidden>Choix de la catégorie...</option>
 						<option value="entrée">entrée</option>
 						<option value="plat">plat</option>
 						<option value="dessert">dessert</option>
+<<<<<<< HEAD
 					</select><br>
 					<input type="text" class="form-control" id="inputPlat" placeholder="Nom du Plat" ng-model="meal"><br>
 					<textarea rows="4" class="form-control" id="inputIngredient" placeholder="Ingrédients (ex:tomate, sel, etc...)" ng-model="ingredients"></textarea><br>
 					<textarea rows="4" class="form-control" id="inputRec" placeholder="La recette" ng-model="recipe"></textarea><br>
+=======
+					</select>
+					<br>
+					<input type="text" class="form-control" id="inputPlat" placeholder="Nom du Plat" ng-model="meal">
+					<br>
+					<input type="text" class="form-control" id="inputIngredient" placeholder="Ingrédients (ex:tomate, sel, etc...)" ng-model="ingredients">
+					<br>
+					<input type="text" class="form-control" id="inputRec" placeholder="La recette" ng-model="recipe">
+					<br>
+>>>>>>> b979159a8da938f588f92053796bdf201fba292c
 				</div>
-				<div class="form-group white">
-					<input type='file' ng-model='imageFile' base-sixty-four-input onchange="angular.element(this).scope().previewFile(this)">
-					<img id="preview">
+				<!-- CHARGEMENT IMAGE-->
+				<div class="form-group">
+					<div flow-init="{target: '/upload', singleFile: true}" flow-file-added="!!{png:1,gif:1,jpg:1,jpeg:1}[$file.getExtension()]" flow-name="uploader.flow" flow-files-added="processFiles($files)">
+						<div ng-repeat="image in uploader.flow.files track by $index">
+							<img ng-show="out" class="preview" flow-img="image" />
+							<p><img class="preview" ng-src="{{imageStrings[$index]}}" /></p>
+							<p><span class="btn glyphicon glyphicon-trash trashColor" ng-show="$flow.files.length" ng-click="image.cancel()"></span></p>
+						</div>
+						<!-- BOUTON IMAGE -->
+						<button flow-btn flow-attrs="{accept:'image/*'}" type="file" id="btnImage" class="btn btn-default">Télécharger une image</button>
+					</div>
 				</div>
-				<button type="submit" class="btn btn-info" ng-click="add()">Ajouter</button>
+				<br>
+
+				<button type="submit" class="btn btn-info" ng-click="add()">Enregistrer</button>
 			</form>
 		</div>
 		<div class="class col-md-12">
@@ -46,10 +69,10 @@
 					<tbody ng-repeat="dish in dishs">
 						<tr>
 							<td>
-								<img class="imgAdd" src="{{dish.image}}">
+								<img class="imgAdd charger" src="{{dish.image}}">
 							</td>
 							<td>
-								<select class="form-control" ng-model="dish.category" id="inputCat">
+								<select class="form-control" id="inputCat" ng-model="dish.category">
 									<option value="entrée">entrée</option>
 									<option value="plat">plat</option>
 									<option value="dessert">dessert</option>
@@ -65,47 +88,48 @@
 								<input type="text" class="form-control" id="inputRec" ng-model="dish.recipe">
 							</td>
 							<td>
-							    <div class="btn-group" role="group">
+								<div class="btn-group" role="group">
 									<!-- Etoile 1 -->
 									<button ng-show="dish.stars>=1" ng-click="dish.stars=1;update(dish)" type="button" class="btn btn-warning">
-									<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+										<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
 									</button>
 									<button ng-hide="dish.stars>=1" ng-click="dish.stars=1;update(dish)" type="button" class="btn btn-warning">
-									<span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
+										<span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
 									</button>
 									<!-- Etoile 2 -->
 									<button ng-show="dish.stars>=2" ng-click="dish.stars=2;update(dish)" type="button" class="btn btn-warning">
-									<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+										<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
 									</button>
 									<button ng-hide="dish.stars>=2" ng-click="dish.stars=2;update(dish)" type="button" class="btn btn-warning">
-									<span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
+										<span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
 									</button>
 									<!-- Etoile 3 -->
 									<button ng-show="dish.stars>=3" ng-click="dish.stars=3;update(dish)" type="button" class="btn btn-warning">
-									<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+										<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
 									</button>
 									<button ng-hide="dish.stars>=3" ng-click="dish.stars=3;update(dish)" type="button" class="btn btn-warning">
-									<span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
+										<span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
 									</button>
 									<!-- Etoile 4 -->
 									<button ng-show="dish.stars>=4" ng-click="dish.stars=4;update(dish)" type="button" class="btn btn-warning">
-									<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+										<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
 									</button>
 									<button ng-hide="dish.stars>=4" ng-click="dish.stars=4;update(dish)" type="button" class="btn btn-warning">
-									<span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
+										<span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
 									</button>
 									<!-- Etoile 5 -->
 									<button ng-show="dish.stars>=5" ng-click="dish.stars=5;update(dish)" type="button" class="btn btn-warning">
-									<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+										<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
 									</button>
 									<button ng-hide="dish.stars>=5" ng-click="dish.stars=5;update(dish)" type="button" class="btn btn-warning">
-									<span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
+										<span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
 									</button>
 								</div>
-								<br><br>
+								<br>
+								<br>
 								<div class="pull-center">
-								<button type="submit" class="btn btn-info" ng-click="update(dish)">Maj</button>
-								<button type="submit" class="btn btn-danger" ng-click="delete(dish)">X</button>
+									<button type="submit" class="btn btn-info" ng-click="update(dish)">Maj</button>
+									<button type="submit" class="btn btn-danger" ng-click="delete(dish)">X</button>
 								</div>
 							</td>
 						</tr>

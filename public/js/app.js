@@ -1,25 +1,25 @@
 function config($routeProvider) {
 	$routeProvider
 		.when('/', {
-			templateUrl: 'views/dish.html',
-			controller: 'dishController'
-		})
+		templateUrl: 'views/dish.html',
+		controller: 'dishController'
+	})
 		.when('/guest', {
-			templateUrl: 'views/guest.html',
-			controller: 'guestController'
-		})
+		templateUrl: 'views/guest.html',
+		controller: 'guestController'
+	})
 		.when('/historique', {
-			templateUrl: 'views/main.html',
-			controller: 'invitController'
-		})
+		templateUrl: 'views/main.html',
+		controller: 'invitController'
+	})
 
 		.when('/party', {
-			templateUrl: 'views/party.html',
-			controller: 'partyController',
-		})
+		templateUrl: 'views/party.html',
+		controller: 'partyController',
+	})
 		.otherwise({
-			redirectTo: '/'
-		});
+		redirectTo: '/'
+	});
 }
 
 function run($rootScope, $location) {
@@ -30,7 +30,7 @@ function run($rootScope, $location) {
 		$rootScope.activetab = newVal;
 	});
 }
-angular.module('app', ['ngRoute'])
+angular.module('app', ['ngRoute','flow'])
 	.config(config)
 
 	.controller('dishController', dishController)
@@ -42,6 +42,19 @@ angular.module('app', ['ngRoute'])
 	.service('invitService', invitService)
 	.service('partyService', partyService)
 
+	/*CHARGEMENT IMAGE*/
+	.config(['flowFactoryProvider', function (flowFactoryProvider) {
+		flowFactoryProvider.defaults = {
+			target: '/upload',
+			permanentErrors:[404, 500, 501]
+		};
+		// You can also set default events:
+		flowFactoryProvider.on('catchAll', function (event) {
+			console.log('catchAll', arguments);
+		});
+		// Can be used with different implementations of Flow.js
+		// flowFactoryProvider.factory = fustyFlowFactory;
+	}])
 
 /*.factory('', )*/
-.run(run);
+	.run(run);

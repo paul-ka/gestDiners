@@ -14,17 +14,15 @@ function dishController($scope, $http, dishService) {
 		data.category = $scope.category;
 		data.recipe = $scope.recipe;
 
-		data.image = $scope.imageFile;
+		/*data.image = $scope.imageFile;*/
+		data.image = $scope.imageStrings[0];
 		dishService.create(data).then(function (res) {
 			load();
 		});
 		$scope.meal = "";
 		$scope.ingredients = "";
 		$scope.category = "";
-		$scope.recipe = "";
-
-		$scope.imageFile = "";
-		location.reload();
+		$scope.recipe = "";	
 	}
 	$scope.update = function (dish) {
 		dishService.update(dish._id, dish).then(function (res) {
@@ -54,4 +52,24 @@ function dishController($scope, $http, dishService) {
 	}
 
 	load();
+
+	$scope.imageStrings = [];
+	// datas.images = [];
+	// datas.push($scope.datas);
+	$scope.processFiles = function(files){
+		angular.forEach(files, function(flowFile, i){
+			var fileReader = new FileReader();
+			fileReader.onload = function (event) {
+				var uri = event.target.result;
+				$scope.imageStrings[i] = uri;
+				// var image = new Object();
+				// image["image"] = $scope.imageStrings[i];
+				// datas.images.push(image);
+				// console.log(datas);
+				// console.log($scope.datas);
+			};
+			fileReader.readAsDataURL(flowFile.file);
+		});
+	};
+
 }

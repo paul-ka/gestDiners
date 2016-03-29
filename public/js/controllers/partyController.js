@@ -19,12 +19,10 @@ function partyController($scope, $http, partyService, dishService, guestService,
 		});
 
 	}
-
 	$scope.clickselect = function (guest) {
 		for (var i = 0; i < $scope.dishs.length; i++){
 			$scope.dishs[i].trusty = true;
 			for (var j = 0; j < $scope.guests.length; j++){
-
 
 				if ($scope.guests[j].select == true){
 
@@ -59,11 +57,12 @@ function partyController($scope, $http, partyService, dishService, guestService,
 							$scope.dishs[i].trusty = false;}
 						
 					}
+
 				}
 			}
 		}
 	}
-/*version Jerome
+	/*version Jerome
 	$scope.clickselect = function (guest) {
 		var filter = [];
 		for (var i = 0; i < $scope.dishs.length; i++){
