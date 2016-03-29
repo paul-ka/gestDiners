@@ -4,10 +4,16 @@ function guestController($scope, $http, guestService) {
 	$scope.title = "Mes Amis";
 	$scope.i = 0; 
 	$scope.suivant = function(i){	
+		$scope.nameMessage='';
 		if (($scope.name == undefined) && (i==0)){
 			$scope.nameMessage='Ce champ ne peut être vide';
-		} else {
-			$scope.nameMessage='';
+		}
+		for (var i = 0; i < $scope.guests.length; i++){
+			if ($scope.guests[i].name.toLowerCase() == $scope.name.toLowerCase()){
+				$scope.nameMessage='Cet invité existe déjà';
+			} 
+		}
+		if($scope.nameMessage==''){
 			$scope.i++;
 		}
 	}	
