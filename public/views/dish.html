@@ -11,15 +11,15 @@
 			<form class="plats">
 				<div class="form-group">
 
-					<select class="form-control" id="inputCat" ng-model="category">
+					<select class="form-control" id="inputCat" ng-model="dish.category">
 						<option value="" disabled selected hidden>Choix de la catégorie...</option>
 						<option value="entrée">entrée</option>
 						<option value="plat">plat</option>
 						<option value="dessert">dessert</option>
 
 					</select><br>
-					<input type="text" class="form-control" id="inputPlat" placeholder="Nom du Plat" ng-model="meal"><br>
-					<textarea rows="4" class="form-control" id="inputIngredient" placeholder="Ingrédients (ex:tomate, sel, etc...)" ng-model="ingredients"></textarea><br>
+					<input type="text" class="form-control" id="inputPlat" placeholder="Nom du Plat" ng-model="dish.meal"><br>
+					<textarea rows="4" class="form-control" id="inputIngredient" placeholder="Ingrédients (ex:tomate, sel, etc...)" ng-model="dish.ingredients"></textarea><br>
 					<textarea rows="4" class="form-control" id="inputRec" placeholder="La recette" ng-model="recipe"></textarea><br>
 
 				</div>

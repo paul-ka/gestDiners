@@ -15,16 +15,9 @@ var dishSchema = new mongoose.Schema({
 
 var Dish = {
 	model: mongoose.model('Dish', dishSchema),
+    
 	create: function (req, res) {
-		Dish.model.create({
-			category: req.body.category,
-			entree: req.body.entree,
-			meal: req.body.meal,
-			dessert: req.body.dessert,
-			ingredients: req.body.ingredients,
-			category: req.body.category,
-			image: req.body.image
-		}, function () {
+		Dish.model.create(req.body, function () {
 			res.sendStatus(200);
 		})
 	},

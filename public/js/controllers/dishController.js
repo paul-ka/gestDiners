@@ -1,22 +1,16 @@
 // MAIN CONTROLLER DISH
 function dishController($scope, $http, dishService) {
 	$scope.title = "Liste de plats";
-
+    $scope.dish = {};
+    
 	function load() {
 		dishService.get().then(function (res) {
 			$scope.dishs = res.data;
 		});
 	}
 	$scope.add = function () {
-		var data = {};
-		data.meal = $scope.meal;
-		data.ingredients = $scope.ingredients;
-		data.category = $scope.category;
-		data.recipe = $scope.recipe;
-
-		/*data.image = $scope.imageFile;*/
-		data.image = $scope.imageStrings[0];
-		dishService.create(data).then(function (res) {
+		$scope.dish.image = $scope.imageStrings[0];
+		dishService.create($scope.dish).then(function (res) {
 			load();
 		});
 		$scope.meal = "";
